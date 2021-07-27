@@ -44,7 +44,18 @@ class LinkedList {
 		let prev = null;
 		let pos = 1;
 		if (this.head) {
-			
+			while (curr) {
+				if (position === pos) {
+					element.next = curr;
+					prev.next = element;
+					return;
+				}
+				pos += 1;
+				prev = curr;
+				curr = curr.next;
+			}
+		} else {
+			this.head = element;
 		}
 	}
 }
@@ -54,6 +65,10 @@ let linkedList1 = new LinkedList();
 linkedList1.append(new Node(5));
 linkedList1.append(new Node(10));
 linkedList1.append(new Node(15));
+linkedList1.append(new Node(20));
 // console.log(linkedList1);
 
 console.log(linkedList1.get_position(2));
+
+linkedList1.insert(new Node(8), 2);
+console.log(linkedList1.get_position(4));
