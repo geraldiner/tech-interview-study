@@ -65,7 +65,11 @@ class LinkedList {
 		if (this.head) {
 			while (curr) {
 				if (curr.value === value) {
-					prev.next = curr.next;
+					if (prev) {
+						prev.next = curr.next;
+					} else {
+						this.head = curr.next;
+					}
 					curr.next = null;
 					return
 				}
@@ -90,3 +94,5 @@ linkedList1.insert(new Node(8), 2);
 console.log(linkedList1.get_position(4));
 linkedList1.delete(15);
 console.log(linkedList1.get_position(4));
+linkedList1.delete(5);
+console.log(linkedList1);
