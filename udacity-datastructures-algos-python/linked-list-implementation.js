@@ -58,6 +58,23 @@ class LinkedList {
 			this.head = element;
 		}
 	}
+
+	delete(value) {
+		let curr = this.head;
+		let prev = null;
+		if (this.head) {
+			while (curr) {
+				if (curr.value === value) {
+					prev.next = curr.next;
+					curr.next = null;
+					return
+				}
+				prev = curr;
+				curr = curr.next;
+			}
+		}
+		return;
+	}
 }
 
 let linkedList1 = new LinkedList();
@@ -67,8 +84,9 @@ linkedList1.append(new Node(10));
 linkedList1.append(new Node(15));
 linkedList1.append(new Node(20));
 // console.log(linkedList1);
-
-console.log(linkedList1.get_position(2));
+// console.log(linkedList1.get_position(2));
 
 linkedList1.insert(new Node(8), 2);
+console.log(linkedList1.get_position(4));
+linkedList1.delete(15);
 console.log(linkedList1.get_position(4));
