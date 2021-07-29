@@ -1,4 +1,4 @@
-class Node {
+class Element {
 	constructor(value) {
 		this.value = value;
 		this.next = null;
@@ -60,7 +60,8 @@ class LinkedList {
 	}
 
 	insert_first(element) {
-
+		element.next = this.head;
+		this.head = element;
 	}
 
 	delete(value) {
@@ -85,26 +86,45 @@ class LinkedList {
 	}
 
 	delete_first() {
-
+		if (this.head) {
+			let temp = this.head;
+			this.head = this.head.next;
+			return temp;
+		}
 	}
 }
 
 class Stack {
-	constrcutor
+	constructor(top = null) {
+		this.ll = new LinkedList(top);
+	}
+
+	push(element) {
+		this.ll.insert_first(element);
+	}
+
+	pop() {
+		return this.ll.delete_first();
+	}
 }
 
-let linkedList1 = new LinkedList();
+//# Test cases
+//# Set up some Elements
+let e1 = new Element(1)
+let e2 = new Element(2)
+let e3 = new Element(3)
+let e4 = new Element(4)
 
-linkedList1.append(new Node(5));
-linkedList1.append(new Node(10));
-linkedList1.append(new Node(15));
-linkedList1.append(new Node(20));
-// console.log(linkedList1);
-// console.log(linkedList1.get_position(2));
+//# Start setting up a Stack
+let stack = new Stack(e1) 
+console.log(stack) // [1]
 
-linkedList1.insert(new Node(8), 2);
-console.log(linkedList1.get_position(4));
-linkedList1.delete(15);
-console.log(linkedList1.get_position(4));
-linkedList1.delete(5);
-console.log(linkedList1);
+//# Test stack functionality
+stack.push(e2) // [2, 1]
+stack.push(e3) // [3, 2, 1]
+console.log(stack.pop().value) // 3
+console.log(stack.pop().value) // 2
+console.log(stack.pop().value) // 1
+console.log(stack.pop()) // null
+stack.push(e4) // [4]
+console.log(stack.pop().value) // 4
