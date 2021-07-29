@@ -90,6 +90,8 @@ class LinkedList {
 			let temp = this.head;
 			this.head = this.head.next;
 			return temp;
+		} else {
+			return -1
 		}
 	}
 }
