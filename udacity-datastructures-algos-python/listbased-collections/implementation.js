@@ -59,6 +59,10 @@ class LinkedList {
 		}
 	}
 
+	insert_first(element) {
+
+	}
+
 	delete(value) {
 		let curr = this.head;
 		let prev = null;
@@ -79,6 +83,14 @@ class LinkedList {
 		}
 		return;
 	}
+
+	delete_first() {
+
+	}
+}
+
+class Stack {
+	constrcutor
 }
 
 let linkedList1 = new LinkedList();
