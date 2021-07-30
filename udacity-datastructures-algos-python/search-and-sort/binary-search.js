@@ -11,24 +11,20 @@
 // doesn't exist in the list."""
 
 function binary_search(arr, val) {
-	let temp = arr;
-	while (temp.length != 1) {
-		let half = Math.floor(temp.length/2);
-		if (val == temp[half]) {
-			return half;
-		} else if (val < temp[half]) {
-			temp = temp.slice(0,half);
+	let high = arr.length - 1;
+	let low = 0;
+	let mid = 0;
+	while (low <= high) {
+		mid = Math.floor((low+high)/2);
+		if (val == arr[mid]) {
+			return mid;
+		} else if (val < arr[mid]) {
+			high = mid - 1;
 		} else {
-			temp = temp.slice(half+1);
+			low = mid + 1;
 		}
 	}
-	if (temp.length == 1) {
-		if (val > temp[0]) {
-			return -1
-		} else {
-			return arr.indexOf(temp[0])
-		}
-	}
+	return -1;
 }
 
 let test_list = [1,3,9,11,15,19,29]
