@@ -1089,4 +1089,14 @@ Have a story, not just data, about something you accomplished.
 - What are you working on?
 - What do you like about it?
 - What is the work life like?
-- How is work/life balance?
+- How is work/life balance## Other Projects
+
+Check out other stuff I've worked on:
+
+**Rehabitter:** https://github.com/geraldiner/rehabitter
+
+**K.K. Radio:** https://github.com/geraldiner/kk-radio
+
+**Interactive Piano:** https://github.com/geraldiner/piano
+
+**Pom Poko Pomodoro:** https://github.com/geraldiner/pom-poko-pomodoro
