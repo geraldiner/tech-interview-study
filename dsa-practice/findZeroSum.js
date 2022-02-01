@@ -15,25 +15,43 @@ If so, return the subarray
 If not, keep looking
 ** Complexity will be O(n^2) bc of the nested for loop */
 
-function findZeroSumSubarray(list) {
-	let currTotal = 0;
-	let subarrays = [];
+/* function findZeroSumSubarray(list) {
 	for (let i = 0; i < list.length; i++) {
-		currTotal = list[i];
-		if (currTotal === 0) {
-			subarrays.push([list[i]]);
-			break;
-		}
+		let currTotal = 0;
 		for (let j = i + 1; j < list.length; j++) {
-			if (list[j] === 0 - currTotal) {
-				subarrays.push(list.slice(i, j + 1));
-				break;
-			} else {
-				currTotal += list[j];
+			currTotal += list[j];
+			if (currTotal === 0) {
+				console.log(`Subarray: ${list.slice(i + 1, j + 1)}`);
 			}
 		}
 	}
-	return subarrays.length > 0 ? subarrays : "No subarrays were found";
+} */
+
+/* function findZeroSumSubarray(list) {
+	let sumSet = new Set();
+	let sum = 0;
+	for (let i = 0; i < list.length; i++) {
+		sum += list[i];
+		if (sum === 0 || sumSet.has(sum)) {
+			return true;
+		}
+		sumSet.add(sum);
+	}
+	return false;
+} */
+
+function findZeroSumSubarray(list) {
+	let map = {};
+	let total = 0;
+	map[total] = -1;
+	for (let i = 0; i < list.length; i++) {
+		total += list[i];
+		if (total in map) {
+			let start = map[total];
+			console.log(`Subarray: ${list.slice(start + 1, i + 1)}`);
+		}
+		map[total] = i;
+	}
 }
 
 const input1 = [4, 2, -3, -1, 0, 4];
