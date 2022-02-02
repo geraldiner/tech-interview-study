@@ -3,6 +3,19 @@ class Node {
 		this.value = value;
 		this.next = next;
 	}
+
+	print() {
+		let result = "";
+		let curr = this;
+		if (curr) {
+			while (curr) {
+				result += `${curr.value} -> `;
+				curr = curr.next;
+			}
+		}
+		result += "null";
+		console.log(result);
+	}
 }
 
 class LinkedList {
@@ -84,18 +97,19 @@ console.log("insert e");
 l1.insert(e);
 l1.print();
 
-console.log("delete c");
-l1.delete("C");
+console.log("insert f");
+l1.insert(new Node("F"));
 l1.print();
 
-console.log("delete a");
-l1.delete("A");
-l1.print();
+function getMiddleNode(l) {
+	let fast = l.head;
+	let slow = l.head;
+	while (fast && fast.next) {
+		fast = fast.next.next;
+		slow = slow.next;
+	}
+	return slow;
+}
 
-console.log("delete E");
-l1.delete("E");
-l1.print();
-
-console.log("insert g");
-l1.insert(new Node("G"));
-l1.print();
+console.log("get middle node");
+getMiddleNode(l1).print();
