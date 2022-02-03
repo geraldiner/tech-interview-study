@@ -11,8 +11,8 @@ class LinkedList {
 	}
 
 	insert(new_node) {
-		let curr = this.head;
 		if (this.head) {
+			let curr = this.head;
 			while (curr.next) {
 				curr = curr.next;
 			}
@@ -23,9 +23,9 @@ class LinkedList {
 	}
 
 	delete(value) {
-		let curr = this.head;
-		let prev = null;
 		if (this.head) {
+			let curr = this.head;
+			let prev = null;
 			while (curr) {
 				if (curr.value === value) {
 					if (prev) {
@@ -38,13 +38,12 @@ class LinkedList {
 				curr = curr.next;
 			}
 		}
-		return;
 	}
 
 	print() {
 		let result = "";
 		let curr = this.head;
-		if (this.head) {
+		if (curr) {
 			while (curr) {
 				result += `${curr.value} -> `;
 				curr = curr.next;
@@ -55,19 +54,48 @@ class LinkedList {
 	}
 }
 
-let l1 = new LinkedList(new Node(10));
+let a = new Node("A");
+let b = new Node("B");
+let c = new Node("C");
+let d = new Node("D");
+let e = new Node("E");
+
+let l1 = new LinkedList();
+console.log("instantiate l1");
 l1.print();
-let l2 = new LinkedList();
-l2.print();
-l2.insert(new Node(1));
-l2.print();
-l2.insert(new Node(2));
-l2.print();
-l2.insert(new Node(5));
-l2.print();
-l2.insert(new Node(6));
-l2.print();
-l2.insert(new Node(3));
-l2.print();
-l2.delete(5);
-l2.print();
+
+l1.insert(a);
+console.log("insert a");
+l1.print();
+
+console.log("insert b");
+l1.insert(b);
+l1.print();
+
+console.log("insert c");
+l1.insert(c);
+l1.print();
+
+console.log("insert d");
+l1.insert(d);
+l1.print();
+
+console.log("insert e");
+l1.insert(e);
+l1.print();
+
+console.log("delete c");
+l1.delete("C");
+l1.print();
+
+console.log("delete a");
+l1.delete("A");
+l1.print();
+
+console.log("delete E");
+l1.delete("E");
+l1.print();
+
+console.log("insert g");
+l1.insert(new Node("G"));
+l1.print();
