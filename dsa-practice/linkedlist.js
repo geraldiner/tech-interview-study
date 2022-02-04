@@ -35,6 +35,36 @@ class Node {
 		return;
 	}
 
+	//        A -> B -> C -> D -> null
+	//            prev curr
+
+	getMiddleOfList() {
+		if (this) {
+			let fast = this;
+			let slow = this;
+			while (fast != null && fast.next != null) {
+				fast = fast.next.next;
+				slow = slow.next;
+			}
+			return slow;
+		}
+	}
+
+	reverse() {
+		if (this) {
+			let curr = this;
+			let prev = null;
+			while (curr != null) {
+				let next = curr.next;
+				curr.next = prev;
+				prev = curr;
+				curr = next;
+			}
+			return prev;
+		}
+		return;
+	}
+
 	print() {
 		let str = "";
 		let curr = this;
@@ -51,19 +81,20 @@ const a = new Node("A");
 const b = new Node("B");
 const c = new Node("C");
 const d = new Node("D");
+const e = new Node("E");
 
 a.next = b;
 b.next = c;
 c.next = d;
+d.next = e;
+
+const ll = new Node(1);
+
+ll.insert(2);
+ll.insert(3);
+ll.insert(4);
 
 a.print();
-
-const n1 = new Node(1);
-n1.print();
-
-n1.insert(2);
-n1.print();
-
-a.delete("C");
-
-a.print();
+a.reverse().print();
+ll.print();
+ll.reverse().print();
