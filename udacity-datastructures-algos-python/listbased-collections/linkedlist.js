@@ -111,5 +111,21 @@ function getMiddleNode(l) {
 	return slow;
 }
 
+function reverseList(l) {
+	let curr = l.head;
+	let prev = null;
+	while (curr) {
+		let next = curr.next;
+		curr.next = prev;
+		prev = curr;
+		curr = next;
+	}
+	return prev;
+}
+
 console.log("get middle node");
 getMiddleNode(l1).print();
+
+console.log("reverse list");
+l1.print();
+reverseList(l1).print();
