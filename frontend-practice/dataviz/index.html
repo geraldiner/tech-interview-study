@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Data Fetching & Visualization</title>
+	</head>
+	<body>
+		<section>
+			<div class="histogram">
+				<div id="y-axis"></div>
+
+				<div id="x-axis"></div>
+				<div id="bars"></div>
+			</div>
+		</section>
+	</body>
+	<script src="script.js"></script>
+</html>
+
+<!-- 
+  ?? What is the range of the numbers that could be seen?
+  ?? What does "appropriately-numbered x and y axes" look like?
+  ?? Where should the histogram be displayed? Top left? Center? Top Center?
+  
+  -- Fetch data from the endpoint
+  ?? What does it look like? A list? JSON?
+
+  -- Display histogram
+  [] x-axis start at one corner and extends to the right
+  --- interval might be by 1 bc of the randomness in the numbers
+  --- spacing between bars is margin
+  [] y-axis start at the same corner and extends upward
+  --- calculate interval based on the range of the numbers? or the average difference between numbers?
+  --- 24 ones -> 17 twos => 7
+  --- 17 twos -> 30 threes => 13 
+  [] display bars
+  --- number of bars comes from the number of numbers that are seen
+  --- height of bars comes from the frequency- might need a factor (like 2x the actual frequency) to get a good sized histogram
+  --- uniform thickness
+ -->

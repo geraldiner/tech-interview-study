@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.histogram {
+	position: relative;
+}
+
+.axis {
+	background: black;
+}
+
+.bar {
+	background: black;
+	width: 20px;
+	position: absolute;
+	bottom: 28px;
+}
+
+.x-labels {
+	display: inline-block;
+	position: relative;
+	height: 20px;
+}
+
+.label {
+	position: absolute;
+	width: 20px;
+	text-align: center;
+}
