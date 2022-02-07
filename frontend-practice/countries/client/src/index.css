@@ -1,0 +1,105 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Nunito Sans", sans-serif;
+}
+
+html,
+body {
+	font-size: 14px;
+}
+
+body {
+	background-color: hsl(0, 0%, 98%);
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+header,
+.form,
+#countries-list {
+	padding: 0 50px;
+}
+
+header {
+	background-color: white;
+	width: 100%;
+	display: flex;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	justify-content: space-between;
+}
+
+.button {
+	outline: none;
+	border: none;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+#theme-toggle {
+	background: transparent;
+	font-weight: 600;
+}
+
+.form {
+	margin: 30px;
+}
+
+.form form {
+	display: flex;
+	justify-content: space-between;
+}
+
+#countries-list {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Map Card */
+.map-card {
+	background-color: white;
+	width: 220px;
+	height: 280px;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	box-shadow: 3px 3px 8px 2px hsla(0, 0%, 52%, 0.25);
+	cursor: pointer;
+}
+
+.map-card .card-img {
+	position: relative;
+	height: 50%;
+	border-radius: 5px;
+}
+
+.map-card .card-img img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	height: 100%;
+	width: 100%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.map-card .card-info {
+	height: 50%;
+	position: relative;
+	padding: 20px;
+}
+
+.card-info h3 {
+	font-size: 1.25em;
+	margin-bottom: 1rem;
+}
+
+.details span {
+	font-weight: bold;
+}
