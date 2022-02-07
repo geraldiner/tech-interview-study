@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Multi-Step Form</title>
+	</head>
+	<body>
+		<section class="section">
+			<section class="success hidden">
+				<h1>Success!</h1>
+			</section>
+			<form id="form">
+				<section id="back-button-section" class="form-section hidden">
+					<button id="back-button" class="button" type="button">&leftarrow; Back</button>
+				</section>
+				<section id="name-section" class="form-section">
+					<label for="name">Name<input id="name" type="text" name="name" required /></label>
+				</section>
+				<section id="email-section" class="form-section hidden">
+					<label for="email">Email<input id="email" type="email" name="email" required /></label>
+				</section>
+				<section id="birthday-section" class="form-section hidden">
+					<label for="birthday"><input id="birthday" type="date" name="birthday" required /></label>
+				</section>
+				<section id="password-section" class="form-section hidden">
+					<label for="password">Password<input id="password" type="password" name="password" required /></label>
+				</section>
+				<section id="next-button-section" class="form-section">
+					<button id="next-button" class="button" type="button">Next</button>
+					<button id="submit-button" class="button hidden" type="submit">Submit</button>
+				</section>
+			</form>
+		</section>
+		<script src="script.js"></script>
+	</body>
+</html>
+
+<!-- 
+  ?? Should there be any validation at any step? Other than there should be a value in the input?
+
+
+  [] Display initial screen for name
+  --- text input
+  --- next button
+  [] When the next button is clicked, go to next screen: Email
+  --- Back button- when the back button is clicked, go to the prev screen
+  --- email input
+  --- Next button- increment screenNum- display appropriate input
+
+  Could I do it with a single form with all the input tags there but hidden except for the one that should be there?
+
+
+ -->

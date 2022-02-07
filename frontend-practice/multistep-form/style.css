@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*,
+body,
+html {
+	font-family: cursive;
+	font-size: 16pt;
+}
+
+.section {
+	display: flex;
+	justify-content: center;
+}
+
+.section form,
+.section .success {
+	width: max-content;
+	height: max-content;
+	background: #ccc;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.form-section {
+	margin-bottom: 30px;
+}
+
+.form-section input {
+	display: block;
+}
+
+.button {
+	padding: 3px 5px;
+}
+
+.hidden {
+	display: none;
+}
