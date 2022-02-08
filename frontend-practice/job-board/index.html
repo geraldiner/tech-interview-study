@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Job Board</title>
+	</head>
+	<body>
+		<header><h1>HN Jobs</h1></header>
+		<main>
+			<section id="job-board"></section>
+			<section id="load-more">
+				<button id="load-more-button" class="button" type="button">Load more</button>
+			</section>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
+
+<!-- 
+
+  Display the 9 most recent job postings:
+  - Company Name
+  - YC (22), if present
+  - Is hiring... <Job position>
+  - Date posted? at the bottom
+  - URL that opens in new tab (if included, otherwise open the post: https://news.ycombinator.com/item?id=<POST_ID>
+  - Cli
+
+
+  [x] Fetch data for 9 job postings
+  ?? Is there a way to query for only 9? I don't think so- Which means saving the list and only processing 9 at first, then 6 every time the Load More is clicked
+  [] Process data
+  - create a "Job Card"
+  - parse the data.title for the Company Name, "YC (22)", and "Is hiring..." text
+  --- I think this is regex, which I'm not confident in, but I'll try
+  - Date- parse somehow??
+  - URL - click card
+  [] Display Data
+  [] Style data
+
+ -->

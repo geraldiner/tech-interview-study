@@ -1,0 +1,64 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	font-size: 16pt;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #eee;
+	color: black;
+}
+
+header,
+#load-more {
+	padding: 30px;
+	text-align: center;
+}
+
+#job-board {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.job-card {
+	width: 30%;
+	margin: 1.5%;
+	text-align: center;
+	background-color: white;
+	padding: 25px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: initial;
+}
+
+a.job-link {
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: blue;
+	overflow-wrap: break-word;
+	overflow: auto;
+}
+
+.job-link p {
+	font-size: 0.95rem;
+}
+
+.button {
+	outline: none;
+	border: none;
+	padding: 8px 10px;
+	background-color: aqua;
+	font-size: 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+}
