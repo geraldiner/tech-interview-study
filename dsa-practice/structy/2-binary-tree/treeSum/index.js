@@ -9,6 +9,9 @@ class Node {
 // DFS or BFS
 // stack or queue
 // r->l or l->r
+
+// iterative DFS
+/* 
 const treeSum = root => {
 	// the sum of an emtpy tree should be 0
 	if (root === null) return 0;
@@ -21,6 +24,31 @@ const treeSum = root => {
 		if (curr.left) stack.push(curr.left);
 	}
 	return sum;
+}; 
+*/
+
+// iterative BFS
+/*
+const treeSum = root => {
+	// the sum of an emtpy tree should be 0
+	if (root === null) return 0;
+	const queue = [root];
+	let sum = 0;
+	while (queue.length > 0) {
+		const curr = queue.shift();
+		sum += curr.val;
+		if (curr.left) queue.push(curr.left);
+		if (curr.right) queue.push(curr.right);
+	}
+	return sum;
+};
+*/
+
+// recursive DFS
+const treeSum = root => {
+	// the sum of an emtpy tree should be 0
+	if (root === null) return 0;
+	return root.val + treeSum(root.left) + treeSum(root.right);
 };
 
 const a = new Node(3);

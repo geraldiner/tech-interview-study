@@ -6,6 +6,9 @@ class Node {
 	}
 }
 
+// @param: root - reference to the root of a binary tree
+// @param: target - value to be found in the tree
+// @return: bool - whether or not the target is found in root
 const treeIncludes = (root, target) => {
 	// todo
 };
