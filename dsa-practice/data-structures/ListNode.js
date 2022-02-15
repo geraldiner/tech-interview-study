@@ -1,18 +1,18 @@
-class Node {
-	constructor(value = null, next = null) {
-		this.value = value;
+class ListNode {
+	constructor(val = null, next = null) {
+		this.val = val;
 		this.next = next;
 	}
 
-	insert(value) {
+	insert(val) {
 		if (this) {
 			let curr = this;
 			while (curr.next != null) {
 				curr = curr.next;
 			}
-			curr.next = new Node(value);
+			curr.next = new ListNode(val);
 		} else {
-			this.value = value;
+			this.val = val;
 		}
 	}
 
@@ -24,7 +24,7 @@ class Node {
 			let curr = this;
 			let prev = null;
 			while (curr != null) {
-				if (curr.value === target) {
+				if (curr.val === target) {
 					prev.next = curr.next;
 					return;
 				}
@@ -68,8 +68,8 @@ class Node {
 	print() {
 		let str = "";
 		let curr = this;
-		while (curr != null && curr.value != null) {
-			str += `${curr.value} -> `;
+		while (curr != null && curr.val != null) {
+			str += `${curr.val} -> `;
 			curr = curr.next;
 		}
 		str += "null";
@@ -77,26 +77,4 @@ class Node {
 	}
 }
 
-const a = new Node("A");
-const b = new Node("B");
-const c = new Node("C");
-const d = new Node("D");
-const e = new Node("E");
-
-a.next = b;
-b.next = c;
-c.next = d;
-d.next = e;
-
-// const ll = new Node(1);
-
-// ll.insert(2);
-// ll.insert(3);
-// ll.insert(4);
-
-// a.print();
-// a.reverse().print();
-// ll.print();
-// ll.reverse().print();
-
-module.exports = Node;
+module.exports = ListNode;

@@ -1,4 +1,4 @@
-const TreeNode = require("../../data-structures/BinaryTree");
+const TreeNode = require("../../data-structures/TreeNode");
 
 function rangeSumBST(root, low, high) {
 	if (root === null) return 0;
