@@ -1,4 +1,4 @@
-const { Node } = require("../../linkedlist");
+const { Node } = require("../../data-structures/LinkedList");
 
 function removeNthNode(head, n) {
 	let slow = head;
