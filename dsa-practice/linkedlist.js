@@ -88,13 +88,15 @@ b.next = c;
 c.next = d;
 d.next = e;
 
-const ll = new Node(1);
+// const ll = new Node(1);
 
-ll.insert(2);
-ll.insert(3);
-ll.insert(4);
+// ll.insert(2);
+// ll.insert(3);
+// ll.insert(4);
 
-a.print();
-a.reverse().print();
-ll.print();
-ll.reverse().print();
+// a.print();
+// a.reverse().print();
+// ll.print();
+// ll.reverse().print();
+
+module.exports = Node;

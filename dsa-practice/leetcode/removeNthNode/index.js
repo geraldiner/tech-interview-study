@@ -1,33 +1,28 @@
+const { Node } = require("../../linkedlist");
+
 function removeNthNode(head, n) {
-	if (head.next === null) return null;
-	if (head !== null) {
-		let curr = head;
-		let prev = null;
-		let fast = head;
-		for (let i = 0; i < n; i++) {
-			fast = fast.next;
-		}
-		while (fast !== null) {
-			prev = curr;
-			curr = curr.next;
-			fast = fast.next;
-		}
-		prev.next = curr.next;
+	let slow = head;
+	let fast = head;
+	for (let i = 0; i < n; i++) {
+		fast = fast.next;
 	}
+
+	if (!fast) return head.next;
+	while (fast.next) {
+		slow = slow.next;
+		fast = fast.next;
+	}
+	slow.next = slow.next.next;
 	return head;
 }
 
-removeNthNode([1, 2, 3, 4, 5], 2); // => [1,2,3,5]
-// 	1 	2	3	4	5
-// p	c
-// 						f
+// [X]
+const x = new Node("X");
+removeNthNode(x, 1);
+x.print();
 
-removeNthNode([1], 1); // => []
-// 	1
-// p	c
-// 		f
-
-removeNthNode([1, 2], 1); // => [1]
-// 	1	2
-// p	c
-// 			f
+const t = new Node("T");
+const u = new Node("U");
+t.next = u;
+removeNthNode(t, 1); // => [1]
+t.print();
