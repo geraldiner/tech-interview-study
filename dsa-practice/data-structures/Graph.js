@@ -12,8 +12,32 @@ function dfsPrint(graph, source) {
 	}
 }
 
+function bfsPrint(graph, source) {
+	if (!source) {
+		source = Object.keys(graph)[0];
+	}
+	const queue = [source];
+	while (queue.length > 0) {
+		const curr = queue.shift();
+		console.log(curr);
+		for (let neighbor of graph[curr]) {
+			queue.push(neighbor);
+		}
+	}
+}
+
+function dfsPrintRecursive(graph, source) {
+	if (!source) {
+		source = Object.keys(graph)[0];
+	}
+	console.log(source);
+	for (let neighbor of graph[source]) {
+		dfsPrintRecursive(graph, neighbor);
+	}
+}
+
 const graph = {
-	a: ["b", "c"],
+	a: ["c", "b"],
 	b: ["d"],
 	c: ["e"],
 	d: ["f"],
@@ -22,3 +46,5 @@ const graph = {
 };
 
 dfsPrint(graph);
+bfsPrint(graph);
+dfsPrintRecursive(graph);
