@@ -1,4 +1,4 @@
-// approach: Two Pointers
+// Approach: Two Pointers
 
 const uncompress = s => {
 	let res = "";
