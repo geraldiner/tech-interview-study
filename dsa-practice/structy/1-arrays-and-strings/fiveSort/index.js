@@ -1,13 +1,16 @@
 function fiveSort(nums) {
-	let front = 0;
-	let end = nums.length - 1;
-	while (front < end) {
-		if (nums[front] === 5) {
-			nums[front] = nums[end];
-			nums[end] = 5;
-			end -= 1;
+	let i = 0;
+	let j = nums.length - 1;
+	while (i < j) {
+		if (nums[j] === 5) {
+			j -= 1;
+		} else if (nums[i] === 5) {
+			nums[i] = nums[j];
+			nums[j] = 5;
+			i += 1;
+		} else {
+			i += 1;
 		}
-		front += 1;
 	}
 	return nums;
 }
