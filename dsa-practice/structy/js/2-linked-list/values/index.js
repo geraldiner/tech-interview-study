@@ -1,4 +1,4 @@
-const ListNode = require("../../../data-structures/ListNode");
+const ListNode = require("../../../../data-structures/ListNode");
 
 const a = new ListNode("a");
 const b = new ListNode("b");
